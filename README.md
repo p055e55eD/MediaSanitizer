@@ -44,60 +44,74 @@ MediaSanitizer is an AI-powered tool that checks the credibility of Armenian (an
     
 
 ---
+### 🔧 Setup Instructions
 
-### 1. Clone the repository
+#### 1. Clone the repository
+
 ```bash
 git clone https://github.com/p055e55eD/mediasanitizer.git
 cd mediasanitizer
 ```
 
-### 2. Set up Python & install dependencies
+#### 2. Set up Python & install dependencies
 
-> **Python 3.8+ recommended.**
+> **Python 3.8+ recommended**
 
-If you use PyCharm, just open the project and set the interpreter.
-
+If you're using **PyCharm**, open the project and set the Python interpreter manually.
 Otherwise, in terminal:
+
 ```bash
-python -m venv venv venv\Scripts\activate    # On Windows # Or: source venv/bin/activate   # On Mac/Linux  pip install -r requirements.txt
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+# On Windows:
+venv\Scripts\activate
+
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install required packages
+pip install -r requirements.txt
 ```
 
-### 3. Download WebDriver for Selenium
+#### 3. Download WebDriver for Selenium
 
-- **Chrome:** Download ChromeDriver matching your Chrome version.
-    
-- **Edge:** Download msedgedriver.
-    
-- Place the driver `.exe` somewhere in your PATH, or specify its path in your `scraper.py`.
-    
+* For **Chrome**: download [ChromeDriver](https://chromedriver.chromium.org/downloads) that matches your Chrome version.
+* For **Edge**: download [msedgedriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/).
+* Add the driver’s location to your system `PATH`, or hardcode the path in `scraper.py`.
 
-### 4. Set up API Keys
+#### 4. Set up API Key
 
-- **OpenAI API Key** required!
-    
-- Create a file called `.env` in the `backend/` directory:
-    
-    `OPENAI_API_KEY=sk-...`
-    
-    (Get your key from [https://platform.openai.com/](https://platform.openai.com/))
-    
+Create a `.env` file in the `backend/` directory:
 
-### 5. Run the Backend
+```env
+OPENAI_API_KEY=sk-...
+```
 
-`cd backend python app.py`
+> Get your key at [https://platform.openai.com/](https://platform.openai.com/)
 
-> By default, the backend runs at `http://localhost:5000`
+#### 5. Run the Backend
 
-### 6. Run the Frontend
+```bash
+cd backend
+python app.py
+```
 
-No build tools needed! Just open `frontend/index.html` in your browser.
+> Backend will start at `http://localhost:5000`
 
-- For best results, use **Chrome** or **Edge** (Selenium/driver must match browser).
-    
-- If CORS issues, try running a simple static server:
-    
-    `cd frontend python -m http.server 8080 # Then open http://localhost:8080 in browser`
-    
+#### 6. Run the Frontend
+
+No build tools are required. Just open `frontend/index.html` in your browser.
+
+> Optional: To avoid CORS issues, serve it with a local HTTP server:
+
+```bash
+cd frontend
+python -m http.server 8080
+```
+
+Then open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ---
 
