@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediaSanitizer — Armenian News Credibility Checker</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="page-center">
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="brand" style="margin-bottom:7px;">
+          <span class="logo" aria-hidden="true" style="font-size:2.3rem;"></span>
+          <span class="logo-text" style="font-size:2.2rem; margin-left:5px;">MediaSanitizer</span>
+        </div>
+        <div class="subtitle tagline">Making Armenian news cleaner, clearer, and more trustworthy.</div>
+      </header>
+
+      <!-- Card Form -->
+      <main>
+        <section class="card">
+          <h2 style="font-size:1.35rem; font-weight:800; margin-bottom:10px;">Check a News Article</h2>
+          <div style="color:#65799a; font-size:1.01em; margin-bottom:15px;">
+            Paste a news link or the full text below. We’ll check it for credibility, bias, and red flags.
+          </div>
+
+          <form id="checkForm" autocomplete="off">
+            <div class="input-switch" style="margin-bottom:20px;">
+              <button type="button" id="urlSwitch" class="switch-btn active">Link</button>
+              <button type="button" id="textSwitch" class="switch-btn">Text</button>
+            </div>
+
+            <div id="urlInputGroup" class="input-group">
+              <label for="articleUrl">Article URL</label>
+              <input type="url" id="articleUrl" name="articleUrl" placeholder="Paste a news link, e.g. https://civilnet.am/news/..." autocomplete="off" required>
+            </div>
+            <div id="textInputGroup" class="input-group" style="display:none;">
+              <label for="articleText">Article Text</label>
+              <textarea id="articleText" name="articleText" placeholder="Paste the full news article text here..." autocomplete="off"></textarea>
+            </div>
+
+            <button type="submit" id="analyzeBtn" class="analyze-btn" style="margin-top:10px;">
+              <span class="btn-text">Analyze Credibility</span>
+            </button>
+          </form>
+        </section>
+
+        <!-- Info sections side-by-side -->
+        <div class="info-sections-row">
+          <section class="info-section">
+            <h2>What is MediaSanitizer?</h2>
+            <ul style="margin-left:20px;">
+              <li>🧪 <b>Credibility Score:</b> How trustworthy is this news?</li>
+              <li>🧹 <b>Red Flags:</b> Biased language, unverified claims, and more.</li>
+              <li>🧑‍💼 <b>Entity Check:</b> Who and what is mentioned?</li>
+              <li>🔗 <b>Trusted sources comparison:</b> CivilNet, Hetq, Armenpress...</li>
+            </ul>
+          </section>
+          <section class="info-section">
+            <h2>How it works</h2>
+            <ol>
+              <li><b>Paste</b> a link or text</li>
+              <li><b>We analyze it with AI</b></li>
+              <li><b>You get</b> a clear, honest report</li>
+            </ol>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <div class="trusted-by" style="margin-bottom:6px;">
+          Trusted by the Armenian fact‑checking community
+        </div>
+        <p>&copy; 2025 <b>MediaSanitizer</b></p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
